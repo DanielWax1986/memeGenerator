@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <title>MemeGen - Daniel waxenbaum</title>
+</head>
+
+<body class="main-layout" onload="oninit()">
+<header class="flex space-between align-center">
+   
+    <div class="logo">MemeGen</div>
+    
+    <nav class="main-nav">
+        <ul class="main-nav-list flex clean-list">
+            <li><a class="main-nav-item" href="#">About</a></li>
+            <li><a class="main-nav-item" href="#">Gallery</a></li>
+            <li><a class="main-nav-item" href="#">Memes</a></li>
+        </ul>
+        </nav>
+   
+        <button class="btn-toggle-menu" onclick1="onToggleMenu(this)" style="display: none;">Menu</button>
+
+    </header>
+    <main class="main-content">
+
+        <section class="gallery gallery-layout">
+            <div class="control-panel">
+                <label>
+                    <input type="text" placeholder="Search">
+                </label>
+            </div>
+            <div class="imgs-container">
+                <img src="img/1.jpg" alt="">
+                <img src="img/2.jpg" alt="">
+                <img src="img/3.jpg" alt="">
+                <img src="img/4.jpg" alt="">
+                <img src="img/5.jpg" alt="">
+                <img src="img/6.jpg" alt="">
+                <img src="img/7.jpg" alt="">
+                <img src="img/8.jpg" alt="">
+                <img src="img/9.jpg" alt="">
+            </div>
+        </section>
+
+            </div>
+        </section>
+
+        <section class="editor">
+            <div class="control-panel">
+                <input type="text" placeholder="Your text here" oninput="onSetLineTxt(this.value)">
+            </div>
+            <div class="canvas-container">
+                <canvas width="400" height="400" style="outline: 5px solid gray">
+                </canvas>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer flex space-between align-center">
+        <small>all rights Reserved to Daniel Waxenbaum NOV 2023 </small>
+    </footer>
+
+    <script src="js/services/util.service.js"></script>
+    <script src="js/services/gallery.service.js"></script>
+    <script src="js/services/meme.service.js"></script>>
+    <script src="js/meme.controller.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
