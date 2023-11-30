@@ -38,6 +38,18 @@ function onCloseImg() {
     document.querySelector('.categories-container').hidden = false
 }
 
+
+function onCloseImg() {
+    let elSelectedImg = document.querySelector('.open-img')
+    document.querySelector('.gallery').style.display = 'inline-grid'
+    elSelectedImg.style.display = 'none'
+    document.querySelector('.about').hidden = false
+    document.querySelector('input').hidden = false
+    document.querySelector('.name-icon-wrapper').style.display = 'flex'
+    document.querySelector('.categories-container').hidden = false
+}
+
+
 function drawMeme(imageUrl) {
     var img = new Image()
     img.src = imageUrl
@@ -108,7 +120,7 @@ function onSwitchLine() {
     drawMeme(gMeme.selectedImgId)
 }
 
-function onDevareText() {
+function onDeleteText() {
     gMeme.lines[gMeme.selectedLineIdx].txt = ''
     drawMeme(gMeme.selectedImgId)
 }
@@ -129,6 +141,84 @@ function onColorSelect(color_name) {
     gMeme.lines[gMeme.selectedLineIdx].color = color_name
     drawMeme(gMeme.selectedImgId)
 }
+
+function onChangeLineAlign(alignStr) {
+    let align = gCanvas.width / 2
+    console.log(align)
+    switch (alignStr) {
+        case 'right':
+            align = gCanvas.width - 100
+            break;
+        case 'left':
+            align = 100
+
+            break
+        case 'center':
+            align = gCanvas.width / 2
+            break
+        default:
+            break
+    }
+
+    gMeme.lines[gMeme.selectedLineIdx].x = align
+    drawMeme(gMeme.selectedImgId)
+}
+
+
+
+function onHandleInput(elInput) {
+
+    addTextToCanvas(elInput.value)
+}
+
+function resetInput() {
+   
+    const elInput = document.querySelector('.text-input-line > input')
+
+    elInput.value = ''
+
+}
+
+function onAddNewLine() {
+
+    increaseLineIdx()
+
+    resetInput()
+}
+
+
+
+function onSearchOption(searchStr) {
+    increaseCategoryPressNumber(searchStr)
+    let filterArray = gImgs.filter((img) => {
+        let res = true;
+        img.keywords.map((keywodrd) => {
+            if (keywodrd.includes(searchStr)) {
+                console.log(keywodrd, searchStr)
+            } else {
+                res = false
+            }
+        })
+        console.log(res)
+        return res
+    })
+    gFilteredImgs = filterArray
+    renderGallery()
+}
+
+
+function increaseCategoryPressNumber(searchStr) {
+    let category
+    let increase
+    for (category in gKeywords) {
+        if (category === searchStr) {
+            gKeywords[category]++
+        }
+    }
+    renderGallery()
+}
+
+
 
 
 

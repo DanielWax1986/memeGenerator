@@ -26,20 +26,16 @@
         <div class="mobile-menu-btn" onclick="onToggleMenu()">☰</div>
     </header>
 
-
-
-    <div class="images grid column">
-        <img src="img/1.jpg" alt="">
-        <img src="img/2.jpg" alt="">
-        <img src="img/3.jpg" alt="">
-        <img src="img/4.jpg" alt="">
-        <img src="img/5.jpg" alt="">
-        <img src="img/6.jpg" alt="">
-        <img src="img/7.jpg" alt="">
-        <img src="img/8.jpg" alt="">
-        <img src="img/9.jpg" alt="">
-    </div>
-</section>
+    <section class="nav-wrapper">
+        <div class="name-icon-wrapper container">
+            <div class="search-box">
+                <input type="text" class="search-input" name="search" onkeyup="onSearchOption(this.value)"
+                    placeholder="Enter search keyword"><img class="small-icon-search"
+                    src="design/ICONS/search-icon.png">
+            </div>
+            <div class="categories-container"></div>
+        </div>
+       
 
     <main class="main-content container">
         <div class="gallery"></div>
@@ -115,6 +111,25 @@
         </div>
     </main>
 
+    <section class="about">
+        <div class="about-content container">
+            <div class="img-about">
+                <img class="about-me" src="design/daniel.jpg" alt="">
+            </div>
+            <div class="center-wrapper container">
+                <h2 class="label-about">Daniel Waxenbaum</h2>
+                <p>The second best Meme app in the world.</p>
+
+                <div class="social-container container">
+                    <a href="https://www.linkedin.com/in/daniel-waxenbaum-0958721a9/" class="social-icon"><img
+                            class="social-icon" src="./design/ICONS/linkedin-logo.png"></a>
+                    <a href="https://www.facebook.com/dwaxen/" class="social-icon"><img class="social-icon"
+                            src="./design/ICONS/facebook-logo.png"></a>
+                    <a href="https://github.com/DanielWax1986" class="social-icon"><img
+                            class="social-icon" src="./design/ICONS/github-logo.png"></a>
+                </div>
+            </div>
+        </div>
 
     <footer class="main-footer">
         <a><img class="footer-logo" src="./design/logo.png"></a>
@@ -123,7 +138,6 @@
 
     <script src="js/controller.js"></script>
     <script src="js/service.js"></script>
-    <!-- <script src="js/storage.js"></script> -->
 
 </body>
 
