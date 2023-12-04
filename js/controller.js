@@ -18,7 +18,7 @@ function renderGallery() {
 }
 
 function onClickImg(id, url) {
-    setSelectedImage(id)
+    setSelectedImage(id);
     drawMeme(url)
     var elSelectedImg = document.querySelector('.open-img')
     elSelectedImg.style.display = 'block'

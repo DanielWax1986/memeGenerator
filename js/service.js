@@ -74,7 +74,7 @@ function createImg(id, url, keyword) {
 
 function addTextToCanvas(text) {
     if (gMeme.lines.length - 1 < gMeme.selectedLineIdx) {
-        gMeme.lines.push({})
+        gMeme.lines.push({});
     }
     gMeme.lines[gMeme.selectedLineIdx].txt = text
     gMeme.lines[gMeme.selectedLineIdx].size = 20
